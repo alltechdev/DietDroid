@@ -393,6 +393,294 @@
             }
         }
 
+        /* Mobile Menu Styles */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .hamburger {
+            position: relative;
+            width: 24px;
+            height: 20px;
+            margin: 0 auto;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: white;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.25s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 8px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 16px;
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(1) {
+            top: 8px;
+            transform: rotate(135deg);
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(3) {
+            top: 8px;
+            transform: rotate(-135deg);
+        }
+
+        .mobile-side-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.98) 0%, rgba(25, 118, 210, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-side-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .mobile-menu-header h3 {
+            color: #4fc3f7;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+        }
+
+        .mobile-menu-links li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-links a:hover {
+            background: rgba(79, 195, 247, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            nav a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 2rem 0;
+            }
+
+            .blog-post {
+                padding: 2rem 1.5rem;
+                margin-bottom: 1.5rem;
+                border-radius: 15px;
+            }
+
+            .blog-header h1 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+            }
+
+            .blog-meta {
+                font-size: 0.85rem;
+                margin-bottom: 2rem;
+            }
+
+            .blog-content p {
+                font-size: 1rem;
+                line-height: 1.7;
+                margin-bottom: 1.5rem;
+            }
+
+            .blog-content p:first-child {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+
+            .blog-content strong {
+                font-size: 1.05rem;
+            }
+
+            .blog-content h2 {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 1rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.2rem;
+                margin: 1.2rem 0 0.8rem;
+            }
+
+            .blog-content code {
+                font-size: 0.9rem;
+                padding: 0.15rem 0.35rem;
+            }
+
+            .blog-content pre {
+                padding: 0.8rem;
+                margin: 1rem 0;
+                font-size: 0.85rem;
+                border-radius: 6px;
+                overflow-x: auto;
+            }
+
+            .blog-content ol, .blog-content ul {
+                margin-left: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .blog-content li {
+                margin-bottom: 0.75rem;
+                font-size: 0.95rem;
+            }
+
+            .warning-box {
+                padding: 0.8rem;
+                margin: 1.5rem 0;
+                border-radius: 6px;
+            }
+
+            .back-link {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .footer-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.75rem;
+            }
+
+            /* Show mobile menu */
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            /* Hide desktop navigation on mobile */
+            header nav {
+                display: none;
+            }
+
+            /* Hide regular footer links on mobile */
+            .footer-links {
+                display: none;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+                text-align: center;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 0 0.75rem;
@@ -511,6 +799,27 @@
     </style>
 </head>
 <body>
+    <!-- Mobile Menu -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <div class="mobile-side-menu" id="mobileSideMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="../devices.html">📱 Browse Phones</a></li>
+            <li><a href="../blog/">📝 Blog</a></li>
+        </ul>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
     <header>
         <div class="container">
             <div class="header-content">
@@ -602,5 +911,53 @@ fastboot reboot</code></pre>
             <p>&copy; DietDroid.com</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileSideMenu = document.getElementById('mobileSideMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
+
+        function toggleMobileMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileSideMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+
+            // Prevent body scroll when menu is open
+            if (mobileSideMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileSideMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Toggle menu when hamburger is clicked
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+        // Close menu when overlay is clicked
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Close menu when ESC key is pressed
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileSideMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
 </body>
 </html>
