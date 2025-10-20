@@ -243,6 +243,19 @@
             color: #ff8a80;
         }
 
+        .note-box {
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.15) 0%, rgba(255, 193, 7, 0.15) 100%);
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .note-box strong {
+            color: #f9a825;
+        }
+
         .back-link {
             background-color: #0d47a1;
             color: white;
@@ -896,8 +909,47 @@ fastboot reboot</code></pre>
 
                     <ol>
                         <li>Dial <code>*#*#217703#*#*</code>, choose Magisk, and install full version.</li>
-                        <li>Reboot, and</li>
+                        <li>Reboot, and repeat the dialer code if needed until Magisk shows version 25.2 installed.</li>
+                        <li>Enable <strong>Zygisk</strong> in Magisk settings and reboot.</li>
                     </ol>
+
+                    <h2>Install ADBIO APK</h2>
+                    <p>Open browser on your phone and go to: <a href="https://tinyurl.com/adbioapk">https://tinyurl.com/adbioapk</a></p>
+                    <ol>
+                        <li>Click on the download notification (not File Manager).</li>
+                        <li>Allow unknown sources.</li>
+                        <li>Click Back and install the app.</li>
+                        <li>Use launcher code, open app, grant root, click enable.</li>
+                    </ol>
+
+                    <h3>ADB Commands</h3>
+                    <pre><code>adb devices
+adb shell settings put global development_settings_enabled 1
+adb install mrepo.apk
+adb install reschanger.apk
+adb install esfileexplorer.apk
+adb install a4faccessibility.apk</code></pre>
+
+                    <div class="note-box">
+                        <strong>Optional:</strong> <code>wm size 321x428</code> – Adjusts resolution for more screen space. Can toggle using reschanger.
+                    </div>
+
+                    <h3>Use mrepo to flash <code>v2mouse.zip</code></h3>
+                    <p>Use ES File Explorer to browse and flash. Reboot after flashing.</p>
+
+                    <h3>Mouse Controls</h3>
+                    <ul>
+                        <li><strong>Activate:</strong> Long press <code>*</code></li>
+                        <li><strong>Deactivate:</strong> Press <code>*</code></li>
+                        <li><strong>Left Click:</strong> <code>OK</code> or <code>1</code></li>
+                        <li><strong>Right Click:</strong> <code>3</code></li>
+                        <li><strong>Speed Up/Down:</strong> <code>Vol Up/Down</code></li>
+                        <li><strong>Horizontal Scroll:</strong> <code>4 / 6</code></li>
+                        <li><strong>Vertical Scroll:</strong> <code>7 / *</code> or <code>9 / #</code></li>
+                    </ul>
+
+                    <h2>Done!</h2>
+                    <p>Congrats! Enjoy your liberated Flip 2!</p>
                 </div>
             </article>
         </div>
