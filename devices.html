@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Phones - DietDroid.com | Semi-Dumb Phone Collection</title>
+    <meta name="description" content="Browse our complete collection of semi-dumb phones including CAT, NOKIA, TCL, TIQ, and QIN devices. Find specifications, features, and minimalist phone options at DietDroid.com.">
+    <meta name="keywords" content="semi-dumb phones, browse phones, CAT phones, NOKIA phones, TCL phones, TIQ phones, QIN phones, minimalist phones, flip phones">
+    <meta name="author" content="DietDroid.com">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dietdroid.com/devices.html">
+    <meta property="og:title" content="Browse Phones - DietDroid.com">
+    <meta property="og:description" content="Browse our complete collection of semi-dumb phones including CAT, NOKIA, TCL, TIQ, and QIN devices.">
+    <meta property="og:image" content="https://mintmygold.com/partner-with-us/images/android.png">
+    <meta property="og:site_name" content="DietDroid.com">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dietdroid.com/devices.html">
+    <meta property="twitter:title" content="Browse Phones - DietDroid.com">
+    <meta property="twitter:description" content="Browse our complete collection of semi-dumb phones including CAT, NOKIA, TCL, TIQ, and QIN devices.">
+    <meta property="twitter:image" content="https://mintmygold.com/partner-with-us/images/android.png">
+
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://dietdroid.com/devices.html">
+    <meta name="theme-color" content="#0d47a1">
+    <meta name="msapplication-TileColor" content="#0d47a1">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://mintmygold.com/partner-with-us/images/android.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://mintmygold.com/partner-with-us/images/android.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #e9ecef;
+            background-color: #1a1a1a;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #0d47a1;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        main {
+            padding: 3rem 0;
+            flex: 1;
+        }
+
+        .phones-page {
+            background: linear-gradient(135deg, rgba(45, 55, 72, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .phones-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4fc3f7, #0d47a1, #4fc3f7);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .phones-page h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .phones-page p {
+            color: #cbd5e0;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        .phone-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .phone-category {
+            background: linear-gradient(135deg, rgba(45, 55, 72, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out backwards;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .phone-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(79, 195, 247, 0.2), rgba(13, 71, 161, 0.3), rgba(79, 195, 247, 0.2));
+        }
+
+        .phone-category:nth-child(1) { animation-delay: 0.1s; }
+        .phone-category:nth-child(2) { animation-delay: 0.2s; }
+        .phone-category:nth-child(3) { animation-delay: 0.3s; }
+        .phone-category:nth-child(4) { animation-delay: 0.4s; }
+        .phone-category:nth-child(5) { animation-delay: 0.5s; }
+
+        .phone-category:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow:
+                0 10px 25px rgba(79, 195, 247, 0.15),
+                0 5px 15px rgba(13, 71, 161, 0.1);
+            border-color: rgba(79, 195, 247, 0.3);
+        }
+
+        .phone-category h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .phone-list {
+            list-style: none;
+        }
+
+        .phone-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(79, 195, 247, 0.1);
+            color: #cbd5e0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-list li:last-child {
+            border-bottom: none;
+        }
+
+        .phone-list li:hover {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.1) 0%, rgba(13, 71, 161, 0.1) 100%);
+            margin: 0 -1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        .phone-list li::before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #4fc3f7;
+            font-weight: bold;
+        }
+
+        .phone-list li:hover::before {
+            left: 10px;
+            opacity: 1;
+        }
+
+        .back-home {
+            background-color: #0d47a1;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-home:hover {
+            background-color: #1976d2;
+        }
+
+        footer {
+            background-color: #0d47a1;
+            color: #e9ecef;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .hamburger {
+            position: relative;
+            width: 24px;
+            height: 20px;
+            margin: 0 auto;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: white;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.25s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 8px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 16px;
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(1) {
+            top: 8px;
+            transform: rotate(135deg);
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(3) {
+            top: 8px;
+            transform: rotate(-135deg);
+        }
+
+        .mobile-side-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.98) 0%, rgba(25, 118, 210, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-side-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .mobile-menu-header h3 {
+            color: #4fc3f7;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+        }
+
+        .mobile-menu-links li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-links a:hover {
+            background: rgba(79, 195, 247, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            nav a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 2rem 0;
+            }
+
+            .phones-page {
+                padding: 2rem 1.5rem;
+                border-radius: 12px;
+            }
+
+            .phones-page h1 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .phone-categories {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .phone-category {
+                padding: 1.5rem;
+                border-radius: 12px;
+            }
+
+            .phone-category h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .phone-list li {
+                padding: 1rem 0;
+                font-size: 1rem;
+            }
+
+            .back-home {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .footer-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.75rem;
+            }
+
+            /* Show mobile menu */
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            /* Hide desktop navigation on mobile */
+            header nav {
+                display: none;
+            }
+
+            /* Hide regular footer links on mobile */
+            .footer-links {
+                display: none;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+                text-align: center;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .header-content {
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .logo-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .phones-page {
+                padding: 1.5rem 1rem;
+                border-radius: 10px;
+            }
+
+            .phones-page h1 {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .phone-category {
+                padding: 1.2rem;
+                border-radius: 10px;
+            }
+
+            .phone-category h3 {
+                font-size: 1.2rem;
+            }
+
+            .phone-list li {
+                padding: 0.8rem 0;
+                font-size: 0.95rem;
+            }
+
+            .back-home {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            footer {
+                padding: 1rem 0;
+            }
+
+            .footer-links {
+                gap: 0.5rem;
+                flex-direction: column;
+                align-items: center;
+                display: none; /* Hide footer links on smallest mobile */
+            }
+
+            .footer-links a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/WebSite">
+    <header itemscope itemtype="https://schema.org/WPHeader">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" itemprop="url">
+                    <img src="https://mintmygold.com/partner-with-us/images/android.png" alt="DietDroid Logo" class="logo-icon" itemprop="logo">
+                    <span itemprop="name">DietDroid.com</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="devices.html">Browse Phones</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Elements -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <div class="mobile-side-menu" id="mobileSideMenu">
+        <div class="mobile-menu-header">
+            <h3>Navigation</h3>
+            <p style="color: #cbd5e0; font-size: 0.9rem;">Quick links to all pages</p>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="devices.html">📱 Browse Phones</a></li>
+            <li><a href="blog/">📝 Blog</a></li>
+            <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+            <li><a href="terms-of-use.html">📋 Terms Of Use</a></li>
+        </ul>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <main>
+        <div class="container">
+            <section class="phones-page">
+                <a href="index.html" class="back-home">← Back to Home</a>
+                <h1>Browse Phones</h1>
+                
+                <div class="phone-categories">
+                    <div class="phone-category">
+                        <h3>CAT</h3>
+                        <ul class="phone-list">
+                            <li onclick="showPhoneDetails('CAT S22 FLIP')">CAT S22 FLIP</li>
+                        </ul>
+                    </div>
+                    <div class="phone-category">
+                        <h3>NOKIA</h3>
+                        <ul class="phone-list">
+                            <li onclick="showPhoneDetails('NOKIA 800 TOUGH')">NOKIA 800 TOUGH</li>
+                            <li onclick="showPhoneDetails('NOKIA 3210 4G')">NOKIA 3210 4G</li>
+                        </ul>
+                    </div>
+                    <div class="phone-category">
+                        <h3>TCL</h3>
+                        <ul class="phone-list">
+                            <li onclick="showPhoneDetails('TCL FLIP 2')">TCL FLIP 2</li>
+                        </ul>
+                    </div>
+                    <div class="phone-category">
+                        <h3>TIQ</h3>
+                        <ul class="phone-list">
+                            <li onclick="showPhoneDetails('TIQ M5 Mini')">TIQ M5 Mini</li>
+                        </ul>
+                    </div>
+                    <div class="phone-category">
+                        <h3>QIN</h3>
+                        <ul class="phone-list">
+                            <li onclick="showPhoneDetails('F21 PRO')">F21 PRO</li>
+                            <li onclick="showPhoneDetails('F21 PRO PLUS (UNISOC T310)')">F21 PRO PLUS (UNISOC T310)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="devices.html">Browse Phones</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-use.html">Terms Of Use</a>
+            </div>
+            <p>&copy; DietDroid.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileSideMenu = document.getElementById('mobileSideMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
+
+        function toggleMobileMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileSideMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+
+            // Prevent body scroll when menu is open
+            if (mobileSideMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileSideMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Toggle menu when hamburger is clicked
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+        // Close menu when overlay is clicked
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Close menu when ESC key is pressed
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileSideMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        function showPhoneDetails(phoneName) {
+            alert(`${phoneName}\n\nDevice details and specifications coming soon!\n\nThis will include:\n• Full specifications\n• Available apps\n• Setup guides\n• User reviews\n• Purchase options`);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
