@@ -31,15 +31,21 @@
         }
 
         header {
-            background-color: #0d47a1;
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%);
+            backdrop-filter: blur(10px);
             padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(79, 195, 247, 0.3);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -50,6 +56,11 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .logo-icon {
@@ -168,10 +179,13 @@
         }
 
         footer {
-            background-color: #0d47a1;
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%);
+            backdrop-filter: blur(10px);
             color: #e9ecef;
             text-align: center;
             padding: 2rem 0;
+            border-top: 1px solid rgba(79, 195, 247, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
         }
 
         .footer-links {
@@ -185,23 +199,188 @@
             color: white;
             text-decoration: none;
             opacity: 0.8;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
         }
 
         .footer-links a:hover {
             opacity: 1;
+            background: rgba(79, 195, 247, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Styles - Integrated in Header */
+        .mobile-menu-toggle {
+            display: none;
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            border: none;
+            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .hamburger {
+            position: relative;
+            width: 20px;
+            height: 16px;
+            margin: 0 auto;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: white;
+            border-radius: 2px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.25s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 7px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 14px;
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(1) {
+            top: 7px;
+            transform: rotate(135deg);
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(3) {
+            top: 7px;
+            transform: rotate(-135deg);
+        }
+
+        /* Mobile Dropdown Menu */
+        .mobile-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.98) 0%, rgba(25, 118, 210, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            min-width: 200px;
+            z-index: 1000;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .mobile-dropdown-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-dropdown-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-dropdown-menu li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-dropdown-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            display: block;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .mobile-dropdown-menu a:hover {
+            background: rgba(79, 195, 247, 0.2);
+            padding-left: 2rem;
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
             .header-content {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
                 gap: 1rem;
             }
 
-            nav ul {
-                flex-direction: column;
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            /* Show mobile menu */
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            /* Hide desktop navigation on mobile */
+            header nav {
+                display: none;
+            }
+
+            /* Hide regular footer links on mobile */
+            .footer-links {
+                display: none;
+            }
+
+            footer {
+                padding: 1.5rem 0;
                 text-align: center;
-                gap: 1rem;
+            }
+
+            footer p {
+                font-size: 0.85rem;
             }
 
             .policy-header h1 {
@@ -212,6 +391,33 @@
                 padding: 2rem;
             }
         }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .header-content {
+                gap: 0.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .logo-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .policy-content {
+                padding: 1.5rem 1rem;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -220,16 +426,33 @@
             <div class="header-content">
                 <a href="index.html" class="logo">
                     <img src="https://mintmygold.com/partner-with-us/images/android.png" alt="DietDroid Logo" class="logo-icon">
-                    DietDroid.com
+                    <span>DietDroid.com</span>
                 </a>
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="devices.html">Browse Phones</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-use.html">Terms Of Use</a></li>
+                        <li><a href="blog/">Blog</a></li>
                     </ul>
                 </nav>
+                <!-- Mobile Menu Toggle - Integrated in Header -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <!-- Mobile Dropdown Menu -->
+                <div class="mobile-dropdown-menu" id="mobileDropdownMenu">
+                    <ul>
+                        <li><a href="index.html">🏠 Home</a></li>
+                        <li><a href="devices.html">📱 Browse Phones</a></li>
+                        <li><a href="blog/">📝 Blog</a></li>
+                        <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+                        <li><a href="terms-of-use.html">📋 Terms of Service</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -298,12 +521,56 @@
         <div class="container">
             <div class="footer-links">
                 <a href="index.html">Home</a>
-                <a href="devices.html">Browse Phones</a>
+                <a href="blog/">Blog</a>
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="terms-of-use.html">Terms Of Use</a>
             </div>
             <p>&copy; DietDroid.com</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile dropdown menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-dropdown-menu a');
+
+        function toggleMobileMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileDropdownMenu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileDropdownMenu.classList.remove('active');
+        }
+
+        // Toggle menu when hamburger is clicked
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+
+        // Close menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuToggle.contains(e.target) && !mobileDropdownMenu.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu when ESC key is pressed
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileDropdownMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
 </body>
 </html>
