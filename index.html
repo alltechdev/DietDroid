@@ -122,6 +122,16 @@
             height: 32px;
             border-radius: 50%;
             object-fit: cover;
+            animation: rotateLogo 8s linear infinite;
+        }
+
+        @keyframes rotateLogo {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         nav ul {

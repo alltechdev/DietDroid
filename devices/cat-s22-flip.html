@@ -84,6 +84,7 @@
             height: 32px;
             border-radius: 50%;
             object-fit: cover;
+            animation: rotateLogo 8s linear infinite;
         }
 
         nav ul {
@@ -314,6 +315,15 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes rotateLogo {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
             }
         }
 
