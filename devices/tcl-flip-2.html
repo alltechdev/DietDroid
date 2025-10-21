@@ -20,7 +20,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #e9ecef;
-            background: radial-gradient(ellipse at top, #1e3c72 0%, #2a5298 25%, #1a1a1a 100%);
+            background: radial-gradient(ellipse at top, #1e3a8a 0%, #3730a3 25%, #1a1a1a 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -34,8 +34,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 80%, rgba(79, 195, 247, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(13, 71, 161, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
             pointer-events: none;
             z-index: -1;
         }
@@ -47,14 +47,14 @@
         }
 
         header {
-            background: linear-gradient(135deg, rgba(13, 71, 161, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(55, 48, 163, 0.95) 100%);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(79, 195, 247, 0.3);
+            border-bottom: 1px solid rgba(96, 165, 250, 0.3);
         }
 
         .header-content {
@@ -103,14 +103,14 @@
         }
 
         nav a:hover {
-            background: rgba(79, 195, 247, 0.2);
+            background: rgba(96, 165, 250, 0.2);
             transform: translateY(-2px);
         }
 
         /* Mobile Menu Styles - Integrated in Header */
         .mobile-menu-toggle {
             display: none;
-            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
             border: none;
             border-radius: 8px;
             width: 44px;
@@ -180,7 +180,7 @@
             position: absolute;
             top: 100%;
             right: 0;
-            background: linear-gradient(135deg, rgba(13, 71, 161, 0.98) 0%, rgba(25, 118, 210, 0.98) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.98) 0%, rgba(55, 48, 163, 0.98) 100%);
             backdrop-filter: blur(10px);
             border-radius: 8px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -231,7 +231,7 @@
         }
 
         .mobile-dropdown-menu a:hover {
-            background: rgba(79, 195, 247, 0.2);
+            background: rgba(96, 165, 250, 0.2);
             padding-left: 2rem;
         }
 
@@ -261,7 +261,7 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #4fc3f7 0%, #ffffff 50%, #4fc3f7 100%);
+            background: linear-gradient(135deg, #60a5fa 0%, #ffffff 50%, #60a5fa 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -276,7 +276,7 @@
         }
 
         .back-link {
-            background-color: #0d47a1;
+            background-color: #1e3a8a;
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
@@ -288,13 +288,13 @@
         }
 
         .back-link:hover {
-            background-color: #1976d2;
+            background-color: #3730a3;
             transform: translateY(-2px);
         }
 
         .accordion-section {
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #2d3748 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #1a1a1a 100%);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 16px rgba(0,0,0,0.3);
@@ -328,7 +328,7 @@
         }
 
         .accordion-header {
-            background: linear-gradient(135deg, rgba(13, 71, 161, 0.3) 0%, rgba(25, 118, 210, 0.3) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(55, 48, 163, 0.3) 100%);
             padding: 1.5rem;
             cursor: pointer;
             display: flex;
@@ -342,12 +342,12 @@
         }
 
         .accordion-header:hover {
-            background: linear-gradient(135deg, rgba(13, 71, 161, 0.5) 0%, rgba(25, 118, 210, 0.5) 100%);
-            border-bottom-color: rgba(79, 195, 247, 0.5);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(55, 48, 163, 0.5) 100%);
+            border-bottom-color: rgba(96, 165, 250, 0.5);
         }
 
         .accordion-header h2 {
-            color: #4fc3f7;
+            color: #60a5fa;
             font-size: 1.5rem;
             font-weight: 600;
             margin: 0;
@@ -355,7 +355,7 @@
 
         .accordion-icon {
             font-size: 1.5rem;
-            color: #4fc3f7;
+            color: #60a5fa;
             transition: transform 0.3s ease;
         }
 
@@ -382,7 +382,7 @@
 
         .accordion-content li {
             padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(79, 195, 247, 0.1);
+            border-bottom: 1px solid rgba(96, 165, 250, 0.1);
         }
 
         .accordion-content li:last-child {
@@ -390,14 +390,14 @@
         }
 
         .accordion-content a {
-            color: #4fc3f7;
+            color: #60a5fa;
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
         }
 
         .accordion-content a:hover {
-            color: #29b6f6;
+            color: #93c5fd;
             transform: translateX(5px);
         }
 
@@ -416,22 +416,22 @@
         }
 
         .firmware-item {
-            background: linear-gradient(135deg, rgba(45, 55, 72, 0.8) 0%, rgba(26, 32, 44, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(55, 48, 163, 0.9) 100%);
             border-radius: 12px;
             padding: 1.5rem;
-            border: 1px solid rgba(79, 195, 247, 0.2);
+            border: 1px solid rgba(96, 165, 250, 0.2);
             transition: all 0.3s ease;
             box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         }
 
         .firmware-item:hover {
             transform: translateY(-2px);
-            border-color: rgba(79, 195, 247, 0.4);
+            border-color: rgba(96, 165, 250, 0.4);
             box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
 
         .firmware-name {
-            color: #4fc3f7;
+            color: #60a5fa;
             font-weight: 600;
             font-size: 1.1rem;
             line-height: 1.4;
@@ -448,7 +448,7 @@
         }
 
         .info-link {
-            color: #4fc3f7;
+            color: #60a5fa;
             text-decoration: none;
             margin-left: 0.5rem;
             transition: all 0.3s ease;
@@ -456,7 +456,7 @@
         }
 
         .info-link:hover {
-            color: #29b6f6;
+            color: #93c5fd;
             transform: translateX(2px);
         }
 
@@ -467,7 +467,7 @@
         }
 
         .download-btn {
-            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
             color: white;
             text-decoration: none;
             padding: 0.75rem 1.5rem;
@@ -477,14 +477,14 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            border: 1px solid rgba(79, 195, 247, 0.3);
+            border: 1px solid rgba(96, 165, 250, 0.3);
         }
 
         .download-btn:hover {
-            background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+            background: linear-gradient(135deg, #3730a3 0%, #60a5fa 100%);
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(25, 118, 210, 0.4);
-            border-color: rgba(79, 195, 247, 0.5);
+            box-shadow: 0 4px 16px rgba(55, 48, 163, 0.4);
+            border-color: rgba(96, 165, 250, 0.5);
         }
 
         @media (max-width: 768px) {
@@ -514,12 +514,12 @@
         }
 
         footer {
-            background: linear-gradient(135deg, rgba(13, 71, 161, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(55, 48, 163, 0.95) 100%);
             backdrop-filter: blur(10px);
             color: #e9ecef;
             text-align: center;
             padding: 2rem 0;
-            border-top: 1px solid rgba(79, 195, 247, 0.3);
+            border-top: 1px solid rgba(96, 165, 250, 0.3);
         }
 
         .footer-links {
@@ -541,7 +541,7 @@
 
         .footer-links a:hover {
             opacity: 1;
-            background: rgba(79, 195, 247, 0.2);
+            background: rgba(96, 165, 250, 0.2);
             transform: translateY(-2px);
         }
 
