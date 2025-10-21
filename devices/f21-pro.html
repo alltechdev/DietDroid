@@ -420,74 +420,16 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
 
-        .firmware-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
-            gap: 1rem;
-        }
-
         .firmware-name {
             color: #4fc3f7;
             font-weight: 600;
             font-size: 1.1rem;
             line-height: 1.4;
-            flex: 1;
+            margin-bottom: 0.75rem;
             word-break: break-word;
         }
 
-        .firmware-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .firmware-badge.sp-flash {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-        }
-
-        .firmware-badge.fix {
-            background: linear-gradient(135deg, #51cf66, #37b24d);
-            color: white;
-        }
-
-        .firmware-badge.stock {
-            background: linear-gradient(135deg, #339af0, #228be6);
-            color: white;
-        }
-
-        .firmware-badge.custom {
-            background: linear-gradient(135deg, #845ef7, #7950f2);
-            color: white;
-        }
-
-        .firmware-badge.gapps {
-            background: linear-gradient(135deg, #4285f4, #1967d2);
-            color: white;
-        }
-
-        .firmware-badge.patched {
-            background: linear-gradient(135deg, #ff922b, #fd7e14);
-            color: white;
-        }
-
-        .firmware-badge.edition {
-            background: linear-gradient(135deg, #20c997, #12b886);
-            color: white;
-        }
-
-        .firmware-badge.kosher {
-            background: linear-gradient(135deg, #495057, #343a40);
-            color: white;
-        }
-
+    
         .firmware-description {
             color: #cbd5e0;
             margin-bottom: 1rem;
@@ -723,10 +665,7 @@
                 <div class="accordion-content">
                     <div class="firmware-grid">
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🛠️ spflash-f21pro-restore-1.0.8.rar</span>
-                                <span class="firmware-badge sp-flash">SP Flash Tool</span>
-                            </div>
+                            <div class="firmware-name">🛠️ spflash-f21pro-restore-1.0.8.rar</div>
                             <div class="firmware-description">
                                 Original stock firmware version 1.0.8 for SP Flash tool - Format+Download
                             </div>
@@ -738,10 +677,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">📲 f21pro_1.2.5.1.zip</span>
-                                <span class="firmware-badge stock">Stock</span>
-                            </div>
+                            <div class="firmware-name">📲 f21pro_1.2.5.1.zip</div>
                             <div class="firmware-description">
                                 Official stock firmware version 1.2.5.1
                             </div>
@@ -753,10 +689,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">💾 fw_f21pro_v.2.1.6_4-64gb.7z</span>
-                                <span class="firmware-badge stock">Stock</span>
-                            </div>
+                            <div class="firmware-name">💾 fw_f21pro_v.2.1.6_4-64gb.7z</div>
                             <div class="firmware-description">
                                 Official stock firmware version 2.1.6 for 4GB+64GB models
                             </div>
@@ -768,10 +701,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🚀 super-f21-pro-33.2.1.rar</span>
-                                <span class="firmware-badge stock">Stock</span>
-                            </div>
+                            <div class="firmware-name">🚀 super-f21-pro-33.2.1.rar</div>
                             <div class="firmware-description">
                                 Official stock firmware super image version 33.2.1
                             </div>
@@ -794,10 +724,7 @@
                 <div class="accordion-content">
                     <div class="firmware-grid">
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">📱 f30_us_lte_bands_package.zip</span>
-                                <span class="firmware-badge sp-flash">SP Flash Tool</span>
-                            </div>
+                            <div class="firmware-name">📱 f30_us_lte_bands_package.zip</div>
                             <div class="firmware-description">
                                 Adds US LTE bands support to F21 Pro
                                 <a href="https://xdaforums.com/t/guide-xiaomi-qin-f21-pro-with-us-bands.4579393/" target="_blank" class="info-link">ℹ️ Guide</a>
@@ -810,10 +737,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🔊 speaker-fix.zip</span>
-                                <span class="firmware-badge fix">Fix</span>
-                            </div>
+                            <div class="firmware-name">🔊 speaker-fix.zip</div>
                             <div class="firmware-description">
                                 Fixes speaker issue on new batch F21 Pro devices
                                 <a href="https://forums.jtechforums.org/t/guide-fix-new-batch-f21-pro-speaker-issue" target="_blank" class="info-link">ℹ️ Guide</a>
@@ -826,10 +750,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">📲 f21_pro_1.1.1.zip</span>
-                                <span class="firmware-badge stock">Stock</span>
-                            </div>
+                            <div class="firmware-name">📲 f21_pro_1.1.1.zip</div>
                             <div class="firmware-description">
                                 Original stock firmware version 1.1.1
                             </div>
@@ -841,10 +762,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🇺🇸 OLD-F21-USA-6.1.3-ROOTED_INTEGRITY_TWEAKS.rar</span>
-                                <span class="firmware-badge custom">Custom ROM</span>
-                            </div>
+                            <div class="firmware-name">🇺🇸 OLD-F21-USA-6.1.3-ROOTED_INTEGRITY_TWEAKS.rar</div>
                             <div class="firmware-description">
                                 Custom ROM for old audio hardware with Verizon MMS fix
                                 <a href="https://forums.jtechforums.org/t/rom-f21-pro-usa-v6-1-3-verizon-mms-fixed" target="_blank" class="info-link">ℹ️ Guide</a>
@@ -857,10 +775,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🇺🇸 NEW-F21-USA-6.1.3-ROOTED_INTEGRITY_TWEAKS.rar</span>
-                                <span class="firmware-badge custom">Custom ROM</span>
-                            </div>
+                            <div class="firmware-name">🇺🇸 NEW-F21-USA-6.1.3-ROOTED_INTEGRITY_TWEAKS.rar</div>
                             <div class="firmware-description">
                                 Custom ROM for new audio hardware with Verizon MMS fix
                                 <a href="https://forums.jtechforums.org/t/rom-f21-pro-usa-v6-1-3-verizon-mms-fixed" target="_blank" class="info-link">ℹ️ Guide</a>
@@ -873,10 +788,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🌍 a.i.v_f21pro_global_(google&multilanguage).7z</span>
-                                <span class="firmware-badge gapps">Google Apps</span>
-                            </div>
+                            <div class="firmware-name">🌍 a.i.v_f21pro_global_(google&multilanguage).7z</div>
                             <div class="firmware-description">
                                 Version 1.1.1 with Google Services and multi-language support
                             </div>
@@ -888,10 +800,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🔧 A.I.V._Global_Patched-Services-Jar_SUPER.img</span>
-                                <span class="firmware-badge patched">Patched</span>
-                            </div>
+                            <div class="firmware-name">🔧 A.I.V._Global_Patched-Services-Jar_SUPER.img</div>
                             <div class="firmware-description">
                                 Same ROM as above, fixes background app killing issue
                             </div>
@@ -903,10 +812,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🔧 super-newf21-a.i.v._google_patched-service.jar-speaker-fixed</span>
-                                <span class="firmware-badge patched">Patched</span>
-                            </div>
+                            <div class="firmware-name">🔧 super-newf21-a.i.v._google_patched-service.jar-speaker-fixed</div>
                             <div class="firmware-description">
                                 Fixes background app killing and new audio hardware speaker issues
                             </div>
@@ -918,10 +824,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">⚡ F21_v1.1.1_TripleU_Edition.7z</span>
-                                <span class="firmware-badge edition">Special Edition</span>
-                            </div>
+                            <div class="firmware-name">⚡ F21_v1.1.1_TripleU_Edition.7z</div>
                             <div class="firmware-description">
                                 Updated version 1.1.1 with Google Services integration
                             </div>
@@ -933,10 +836,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🕍 f21_a.i.v._kosher.7z</span>
-                                <span class="firmware-badge kosher">Kosher ROM</span>
-                            </div>
+                            <div class="firmware-name">🕍 f21_a.i.v._kosher.7z</div>
                             <div class="firmware-description">
                                 Israeli Kosher ROM with AIV modifications
                             </div>
@@ -948,10 +848,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🇺🇸🕍 F21Pro_American.7z</span>
-                                <span class="firmware-badge kosher">American Kosher</span>
-                            </div>
+                            <div class="firmware-name">🇺🇸🕍 F21Pro_American.7z</div>
                             <div class="firmware-description">
                                 American Kosher ROM for old audio hardware
                                 <a href="https://forums.jtechforums.org/t/a-i-v-american-kosher-rom-for-qin-f21-pro" target="_blank" class="info-link">ℹ️ Guide</a>

@@ -420,54 +420,16 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
 
-        .firmware-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
-            gap: 1rem;
-        }
-
         .firmware-name {
             color: #4fc3f7;
             font-weight: 600;
             font-size: 1.1rem;
             line-height: 1.4;
-            flex: 1;
+            margin-bottom: 0.75rem;
             word-break: break-word;
         }
 
-        .firmware-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .firmware-badge.stock {
-            background: linear-gradient(135deg, #339af0, #228be6);
-            color: white;
-        }
-
-        .firmware-badge.super {
-            background: linear-gradient(135deg, #51cf66, #37b24d);
-            color: white;
-        }
-
-        .firmware-badge.custom {
-            background: linear-gradient(135deg, #845ef7, #7950f2);
-            color: white;
-        }
-
-        .firmware-badge.mod {
-            background: linear-gradient(135deg, #ff922b, #fd7e14);
-            color: white;
-        }
-
+        
         .firmware-description {
             color: #cbd5e0;
             margin-bottom: 1rem;
@@ -703,10 +665,7 @@
                 <div class="accordion-content">
                     <div class="firmware-grid">
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">📦 stockKEFS.zip</span>
-                                <span class="firmware-badge stock">Super Image</span>
-                            </div>
+                            <div class="firmware-name">📦 stockKEFS.zip</div>
                             <div class="firmware-description">
                                 Official stock firmware super.img file for TCL Flip 2
                             </div>
@@ -718,10 +677,7 @@
                         </div>
 
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">💾 stock_kefh_super.rar</span>
-                                <span class="firmware-badge super">Super Image</span>
-                            </div>
+                            <div class="firmware-name">💾 stock_kefh_super.rar</div>
                             <div class="firmware-description">
                                 Official stock firmware super.img alternative file for TCL Flip 2
                             </div>
@@ -744,10 +700,7 @@
                 <div class="accordion-content">
                     <div class="firmware-grid">
                         <div class="firmware-item">
-                            <div class="firmware-header">
-                                <span class="firmware-name">🔧 super_kefs_mod.rar</span>
-                                <span class="firmware-badge mod">Modified</span>
-                            </div>
+                            <div class="firmware-name">🔧 super_kefs_mod.rar</div>
                             <div class="firmware-description">
                                 Modified super.img with custom enhancements and optimizations
                             </div>
