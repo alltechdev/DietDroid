@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCL FLIP 2 - DietDroid.com</title>
+    <meta name="description" content="TCL Flip 2 - Here you will find guides, firmware, drivers, tools, gapps and device specific apks. All you need, you will find on this page.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dietdroid.com/tcl-flip-2/">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://mintmygold.com/partner-with-us/images/android.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://mintmygold.com/partner-with-us/images/android.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #e9ecef;
+            background: radial-gradient(ellipse at top, #1e3c72 0%, #2a5298 25%, #1a1a1a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(79, 195, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(13, 71, 161, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(79, 195, 247, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background: rgba(79, 195, 247, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Styles - Integrated in Header */
+        .mobile-menu-toggle {
+            display: none;
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            border: none;
+            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .hamburger {
+            position: relative;
+            width: 20px;
+            height: 16px;
+            margin: 0 auto;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: white;
+            border-radius: 2px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.25s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 7px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 14px;
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(1) {
+            top: 7px;
+            transform: rotate(135deg);
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(3) {
+            top: 7px;
+            transform: rotate(-135deg);
+        }
+
+        /* Mobile Dropdown Menu */
+        .mobile-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.98) 0%, rgba(25, 118, 210, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            min-width: 200px;
+            z-index: 1000;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .mobile-dropdown-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-dropdown-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-dropdown-menu li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-dropdown-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            display: block;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .mobile-dropdown-menu a:hover {
+            background: rgba(79, 195, 247, 0.2);
+            padding-left: 2rem;
+        }
+
+        main {
+            padding: 4rem 0;
+            flex: 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #4fc3f7 0%, #ffffff 50%, #4fc3f7 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #cbd5e0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            background-color: #0d47a1;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            background-color: #1976d2;
+            transform: translateY(-2px);
+        }
+
+        .accordion-section {
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2d3748 0%, #1a1a1a 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .accordion-section:nth-child(1) { animation-delay: 0.1s; }
+        .accordion-section:nth-child(2) { animation-delay: 0.2s; }
+        .accordion-section:nth-child(3) { animation-delay: 0.3s; }
+        .accordion-section:nth-child(4) { animation-delay: 0.4s; }
+        .accordion-section:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .accordion-header {
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.3) 0%, rgba(25, 118, 210, 0.3) 100%);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.5) 0%, rgba(25, 118, 210, 0.5) 100%);
+            border-bottom-color: rgba(79, 195, 247, 0.5);
+        }
+
+        .accordion-header h2 {
+            color: #4fc3f7;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            color: #4fc3f7;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 1.5rem;
+        }
+
+        .accordion-content.active {
+            max-height: 3000px;
+            padding: 1.5rem;
+        }
+
+        .accordion-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .accordion-content li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(79, 195, 247, 0.1);
+        }
+
+        .accordion-content li:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-content a {
+            color: #4fc3f7;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .accordion-content a:hover {
+            color: #29b6f6;
+            transform: translateX(5px);
+        }
+
+        .empty-message {
+            color: #cbd5e0;
+            font-style: italic;
+            padding: 1rem 0;
+        }
+
+        /* Firmware Grid Styles */
+        .firmware-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+            margin-bottom: 1.5rem;
+        }
+
+        .firmware-item {
+            background: linear-gradient(135deg, rgba(45, 55, 72, 0.8) 0%, rgba(26, 32, 44, 0.9) 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
+        .firmware-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(79, 195, 247, 0.4);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .firmware-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            gap: 1rem;
+        }
+
+        .firmware-name {
+            color: #4fc3f7;
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            flex: 1;
+            word-break: break-word;
+        }
+
+        .firmware-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .firmware-badge.stock {
+            background: linear-gradient(135deg, #339af0, #228be6);
+            color: white;
+        }
+
+        .firmware-badge.super {
+            background: linear-gradient(135deg, #51cf66, #37b24d);
+            color: white;
+        }
+
+        .firmware-badge.custom {
+            background: linear-gradient(135deg, #845ef7, #7950f2);
+            color: white;
+        }
+
+        .firmware-badge.mod {
+            background: linear-gradient(135deg, #ff922b, #fd7e14);
+            color: white;
+        }
+
+        .firmware-description {
+            color: #cbd5e0;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .info-link {
+            color: #4fc3f7;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .info-link:hover {
+            color: #29b6f6;
+            transform: translateX(2px);
+        }
+
+        .firmware-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(79, 195, 247, 0.3);
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(25, 118, 210, 0.4);
+            border-color: rgba(79, 195, 247, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .firmware-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .firmware-name {
+                font-size: 1rem;
+            }
+
+            .firmware-badge {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.6rem;
+            }
+
+            .firmware-description {
+                font-size: 0.9rem;
+            }
+
+            .download-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.95) 0%, rgba(25, 118, 210, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            color: #e9ecef;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(79, 195, 247, 0.3);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            background: rgba(79, 195, 247, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            /* Show mobile menu */
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            /* Hide desktop navigation on mobile */
+            header nav {
+                display: none;
+            }
+
+            main {
+                padding: 2rem 0;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .accordion-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .footer-links {
+                display: none;
+            }
+
+            footer {
+                padding: 1.5rem 0;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <img src="https://mintmygold.com/partner-with-us/images/android.png" alt="DietDroid Logo" class="logo-icon">
+                    <span>DietDroid.com</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../devices.html">Browse Phones</a></li>
+                        <li><a href="../blog/">Blog</a></li>
+                    </ul>
+                </nav>
+                <!-- Mobile Menu Toggle - Integrated in Header -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <!-- Mobile Dropdown Menu -->
+                <div class="mobile-dropdown-menu" id="mobileDropdownMenu">
+                    <ul>
+                        <li><a href="../index.html">🏠 Home</a></li>
+                        <li><a href="../devices.html">📱 Browse Phones</a></li>
+                        <li><a href="../blog/">📝 Blog</a></li>
+                        <li><a href="../privacy-policy.html">🔒 Privacy Policy</a></li>
+                        <li><a href="../terms-of-use.html">📋 Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="../devices.html" class="back-link">← Back to Devices</a>
+
+            <div class="page-header">
+                <h1>TCL FLIP 2</h1>
+                <p>Here you will find guides, firmware, drivers, tools, gapps and device specific apks. All you need, you will find on this page.</p>
+            </div>
+
+            <!-- Guides Section -->
+            <div class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>📚 GUIDES</h2>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <!-- Add links here later -->
+                        <li class="empty-message">No guides added yet. Links can be added here.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Stock Firmware Section -->
+            <div class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>📱 STOCK FIRMWARE</h2>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="firmware-grid">
+                        <div class="firmware-item">
+                            <div class="firmware-header">
+                                <span class="firmware-name">📦 stockKEFS.zip</span>
+                                <span class="firmware-badge stock">Super Image</span>
+                            </div>
+                            <div class="firmware-description">
+                                Official stock firmware super.img file for TCL Flip 2
+                            </div>
+                            <div class="firmware-actions">
+                                <a href="https://github.com/alltechdev/DietDroid/releases/download/tcl-flip2-stock-firmware/stockKEFS.zip" target="_blank" class="download-btn">
+                                    ⬇️ Download
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="firmware-item">
+                            <div class="firmware-header">
+                                <span class="firmware-name">💾 stock_kefh_super.rar</span>
+                                <span class="firmware-badge super">Super Image</span>
+                            </div>
+                            <div class="firmware-description">
+                                Official stock firmware super.img alternative file for TCL Flip 2
+                            </div>
+                            <div class="firmware-actions">
+                                <a href="https://github.com/alltechdev/DietDroid/releases/download/tcl-flip2-stock-firmware/stock_kefh_super.rar" target="_blank" class="download-btn">
+                                    ⬇️ Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Firmware Section -->
+            <div class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>🔧 CUSTOM FIRMWARE</h2>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="firmware-grid">
+                        <div class="firmware-item">
+                            <div class="firmware-header">
+                                <span class="firmware-name">🔧 super_kefs_mod.rar</span>
+                                <span class="firmware-badge mod">Modified</span>
+                            </div>
+                            <div class="firmware-description">
+                                Modified super.img with custom enhancements and optimizations
+                            </div>
+                            <div class="firmware-actions">
+                                <a href="https://github.com/alltechdev/DietDroid/releases/download/tcl-flip2-firmware/super_kefs_mod.rar" target="_blank" class="download-btn">
+                                    ⬇️ Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drivers Section -->
+            <div class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>🔌 DRIVERS</h2>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <!-- Add links here later -->
+                        <li class="empty-message">No drivers added yet. Links can be added here.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tools Section -->
+            <div class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>🛠️ TOOLS</h2>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <!-- Add links here later -->
+                        <li class="empty-message">No tools added yet. Links can be added here.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Gapps Section -->
+            <div class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <h2>📦 GAPPS</h2>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <!-- Add links here later -->
+                        <li class="empty-message">No gapps added yet. Links can be added here.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../blog/">Blog</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-use.html">Terms Of Use</a>
+            </div>
+            <p>&copy; DietDroid.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile dropdown menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-dropdown-menu a');
+
+        function toggleMobileMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileDropdownMenu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileDropdownMenu.classList.remove('active');
+        }
+
+        // Toggle menu when hamburger is clicked
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+
+        // Close menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuToggle.contains(e.target) && !mobileDropdownMenu.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu when ESC key is pressed
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileDropdownMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+
+            // Close all accordions
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.classList.remove('active');
+                const headerContent = header.nextElementSibling;
+                headerContent.classList.remove('active');
+                headerContent.style.maxHeight = null;
+            });
+
+            // Open clicked accordion if it wasn't active
+            if (!isActive) {
+                button.classList.add('active');
+                content.classList.add('active');
+                // Set max-height to the actual scroll height
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
